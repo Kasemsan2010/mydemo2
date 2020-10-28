@@ -26,8 +26,9 @@ const successOption = (props) => {
       <TouchableOpacity
         activeOpacity={0.1}
         onPress={async () => {
-          // await AsyncStorage.removeItem('token');
+          await AsyncStorage.removeItem('token');
           // props.setIsReady(false);
+          props.setIsReady(false);
         }}
         style={{padding: 10}}>
         <Icon
@@ -47,23 +48,31 @@ const successOption = (props) => {
 const RootStack = (props) => {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{title: 'Login'}}
-        />
-        <Stack.Screen
-          name="Register"
-          component={RegisterScreen}
-          options={{title: 'Register'}}
-        />
+      {props.showAuthen ? (
+        <>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{title: 'Login'}}
+          />
+          <Stack.Screen
+            name="Register"
+            component={RegisterScreen}
+            options={{title: 'Register'}}
+          />
+          <Stack.Screen
+            name="Success"
+            component={SuccessTab}
+            options={successOption(props)}
+          />
+        </>
+      ) : (
         <Stack.Screen
           name="Success"
           component={SuccessTab}
           options={successOption(props)}
         />
-      </>
+      )}
     </Stack.Navigator>
   );
 };

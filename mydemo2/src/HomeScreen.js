@@ -11,6 +11,7 @@ import {
 
 // import icon from lib
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {StackActions} from '@react-navigation/native';
 
 // variable in object ดึง object
 CMEntry = ({hint, isPassword, keyboardMode, onChange, icon}) => {
@@ -73,19 +74,34 @@ export default function HomeScreen(props) {
     });
   };
 
-  onClickLogin = async () => {
-    // await สั่งให้ Promise ทำงาน ถ้าไม่ใส่จะได้ เป็น Promise object
-    // ถ้าไม่ใส่ await จะไม่สามารถ เอา item เข้าไปเก็บ ได้ เพราะว่า getItem return เป็น Promise
-    // AsyncStorage.getItem get string from local storage
-    const regUsername = await AsyncStorage.getItem('kUsername');
-    const regPassword = await AsyncStorage.getItem('kPassword');
+  // onClickLogin = async () => {
+  //   // await สั่งให้ Promise ทำงาน ถ้าไม่ใส่จะได้ เป็น Promise object
+  //   // ถ้าไม่ใส่ await จะไม่สามารถ เอา item เข้าไปเก็บ ได้ เพราะว่า getItem return เป็น Promise
+  //   // AsyncStorage.getItem get string from local storage
+  //   const regUsername = await AsyncStorage.getItem('kUsername');
+  //   const regPassword = await AsyncStorage.getItem('kPassword');
 
-    if (username == regUsername && password == regPassword) {
-      alert('Success');
+  //   if (username == regUsername && password == regPassword) {
+  //     alert('Success');
+  //     // props.navigation.navigate('Success');
+  //   } else {
+  //     alert('Failed : ' + `${regUsername} : ${regPassword}`);
+  //     props.navigation.navigate('Success');
+  //   }
+  // }
+  onClickLogin = async () => {
+    const _username = await AsyncStorage.getItem('kUsername');
+    const _password = await AsyncStorage.getItem('kPassword');
+
+    if (username == _username && password == _password) {
+      await AsyncStorage.setItem('token', 'xxxx');
       // props.navigation.navigate('Success');
+      // props.navigation.navigate('Success');
+      // ปุ่มกลับ บน menubar จะหายไป เเละจะถูกเเทนทับด้วย Success
+      props.navigation.dispatch(StackActions.replace('Success'));
     } else {
-      alert('Failed : ' + `${regUsername} : ${regPassword}`);
-      props.navigation.navigate('Success');
+      await AsyncStorage.removeItem('token');
+      alert(`Login failed ${_username}, ${_password}`);
     }
   };
 
