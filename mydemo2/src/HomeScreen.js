@@ -57,7 +57,7 @@ export default function HomeScreen(props) {
       headerRight: () => (
         <TouchableOpacity
           activeOpacity={0.1}
-          onPress={() => alert('www.codemobiles.comm')}
+          onPress={() => alert('www.codemobiles.com')}
           style={{padding: 10}}>
           <Icon
             name="address-card"
