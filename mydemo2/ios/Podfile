@@ -24,6 +24,10 @@ target 'mydemo2' do
 
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
+  pod 'RCTYouTube', :path => '../node_modules/react-native-youtube'
+
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
+
   target 'mydemo2Tests' do
     inherit! :complete
     # Pods for testing

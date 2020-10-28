@@ -9,9 +9,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+import {YouTubeStandaloneAndroid} from 'react-native-youtube';
 import axios from 'axios';
 
-export default function JSONFeedScreen() {
+export default function JSONFeedScreen(props) {
   //state array
   const [dataArray, setDataArray] = useState([]);
   const [isRefreshing, setIsRefreshing] = React.useState(false);
@@ -31,7 +32,20 @@ export default function JSONFeedScreen() {
   };
 
   renderRow = ({item, index}) => (
-    <TouchableOpacity style={styles.listCard}>
+    <TouchableOpacity
+      style={styles.listCard}
+      onPress={() => {
+        // props.navigation.navigate('Youtube', {item}); //{item:item} to {item} short from
+        // props.navigation.navigate("Youtube", {item})
+        YouTubeStandaloneAndroid.playVideo({
+          apiKey: 'YOUR_API_KEY', // Your YouTube Developer API Key
+          videoId: item.id, // YouTube video ID
+          autoplay: true, // Autoplay the video
+          startTime: 120, // Starting point of video (in seconds)
+        })
+          .then(() => console.log('Standalone Player Exited'))
+          .catch((errorMessage) => console.error(errorMessage));
+      }}>
       {/* Avatar and title, listSubtitle */}
       <View style={styles.listCardView}>
         {/* Avatar */}
