@@ -48,8 +48,8 @@ const tab2_Option = {
 const TabScreen = () => {
   return (
     <Tab.Navigator initialRouteName="Tab1">
-      <Tab.Screen name="Tab1" component={TabQRcode} />
-      <Tab.Screen name="Tab2" component={TabScanner} />
+      <Tab.Screen name="Tab1" component={TabQRcode} options={tab1_Option} />
+      <Tab.Screen name="Tab2" component={TabScanner} options={tab2_Option} />
     </Tab.Navigator>
   );
 };
@@ -57,8 +57,12 @@ const TabScreen = () => {
 const RockStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TabScreen" component={TabScreen} />
-      <Stack.Screen name="TabScanner" component={TabScanner} />
+      <Stack.Screen
+        name="TabScreen"
+        component={TabScreen}
+        options={{headerShown: false}} // Header Not Show
+      />
+      <Stack.Screen name="Scanner" component={ScannerScreen} />
     </Stack.Navigator>
   );
 };

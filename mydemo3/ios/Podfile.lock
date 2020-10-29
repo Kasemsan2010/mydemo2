@@ -70,6 +70,16 @@ PODS:
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
   - OpenSSL-Universal/Static (1.0.2.20)
+  - Permission-Camera (2.2.2):
+    - RNPermissions
+  - Permission-Contacts (2.2.2):
+    - RNPermissions
+  - Permission-Microphone (2.2.2):
+    - RNPermissions
+  - Permission-Notifications (2.2.2):
+    - RNPermissions
+  - Permission-PhotoLibrary (2.2.2):
+    - RNPermissions
   - RCTRequired (0.63.3)
   - RCTTypeSafety (0.63.3):
     - FBLazyVector (= 0.63.3)
@@ -236,6 +246,16 @@ PODS:
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
   - React-jsinspector (0.63.3)
+  - react-native-camera (3.40.0):
+    - React-Core
+    - react-native-camera/RCT (= 3.40.0)
+    - react-native-camera/RN (= 3.40.0)
+  - react-native-camera/RCT (3.40.0):
+    - React-Core
+  - react-native-camera/RN (3.40.0):
+    - React-Core
+  - react-native-safe-area-context (3.1.8):
+    - React-Core
   - React-RCTActionSheet (0.63.3):
     - React-Core/RCTActionSheetHeaders (= 0.63.3)
   - React-RCTAnimation (0.63.3):
@@ -296,6 +316,18 @@ PODS:
     - React-Core (= 0.63.3)
     - React-cxxreact (= 0.63.3)
     - React-jsi (= 0.63.3)
+  - RNCMaskedView (0.1.10):
+    - React
+  - RNGestureHandler (1.8.0):
+    - React
+  - RNPermissions (2.2.2):
+    - React-Core
+  - RNReanimated (1.13.1):
+    - React
+  - RNScreens (2.12.0):
+    - React-Core
+  - RNSVG (12.1.0):
+    - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -325,6 +357,11 @@ DEPENDENCIES:
   - FlipperKit/SKIOSNetworkPlugin (~> 0.54.0)
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera.podspec`)
+  - Permission-Contacts (from `../node_modules/react-native-permissions/ios/Contacts.podspec`)
+  - Permission-Microphone (from `../node_modules/react-native-permissions/ios/Microphone.podspec`)
+  - Permission-Notifications (from `../node_modules/react-native-permissions/ios/Notifications.podspec`)
+  - Permission-PhotoLibrary (from `../node_modules/react-native-permissions/ios/PhotoLibrary.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
   - React (from `../node_modules/react-native/`)
@@ -337,6 +374,8 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-camera (from `../node_modules/react-native-camera`)
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -347,6 +386,12 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
+  - RNScreens (from `../node_modules/react-native-screens`)
+  - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -375,6 +420,16 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  Permission-Camera:
+    :path: "../node_modules/react-native-permissions/ios/Camera.podspec"
+  Permission-Contacts:
+    :path: "../node_modules/react-native-permissions/ios/Contacts.podspec"
+  Permission-Microphone:
+    :path: "../node_modules/react-native-permissions/ios/Microphone.podspec"
+  Permission-Notifications:
+    :path: "../node_modules/react-native-permissions/ios/Notifications.podspec"
+  Permission-PhotoLibrary:
+    :path: "../node_modules/react-native-permissions/ios/PhotoLibrary.podspec"
   RCTRequired:
     :path: "../node_modules/react-native/Libraries/RCTRequired"
   RCTTypeSafety:
@@ -395,6 +450,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-camera:
+    :path: "../node_modules/react-native-camera"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -415,6 +474,18 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCMaskedView:
+    :path: "../node_modules/@react-native-community/masked-view"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
+  RNSVG:
+    :path: "../node_modules/react-native-svg"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -435,6 +506,11 @@ SPEC CHECKSUMS:
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
+  Permission-Camera: 5d2aaf95592660b6dcb5e8d1d90ed5d0156cad02
+  Permission-Contacts: 295b2f26e7607801e73b0fd35a56ec63cfd52dc4
+  Permission-Microphone: a0e56790d61392c31627df33328fef079ad46fa8
+  Permission-Notifications: 9c6b5cc4f0e6599e9fc3395b77cebddc48f1be41
+  Permission-PhotoLibrary: 8227a6ed9f6a971537afe63742d54f5f23a38fe2
   RCTRequired: 48884c74035a0b5b76dbb7a998bd93bcfc5f2047
   RCTTypeSafety: edf4b618033c2f1c5b7bc3d90d8e085ed95ba2ab
   React: f36e90f3ceb976546e97df3403e37d226f79d0e3
@@ -445,6 +521,8 @@ SPEC CHECKSUMS:
   React-jsi: df07aa95b39c5be3e41199921509bfa929ed2b9d
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
+  react-native-camera: 35854c4f764a4a6cf61c1c3525888b92f0fe4b31
+  react-native-safe-area-context: 79fea126c6830c85f65947c223a5e3058a666937
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
   React-RCTAnimation: 1befece0b5183c22ae01b966f5583f42e69a83c2
   React-RCTBlob: 0b284339cbe4b15705a05e2313a51c6d8b51fa40
@@ -455,9 +533,15 @@ SPEC CHECKSUMS:
   React-RCTText: 65a6de06a7389098ce24340d1d3556015c38f746
   React-RCTVibration: 8e9fb25724a0805107fc1acc9075e26f814df454
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
+  RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
+  RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
+  RNPermissions: 5df468064df661a4c8c017e2791ce90d7695eea5
+  RNReanimated: dd8c286ab5dd4ba36d3a7fef8bff7e08711b5476
+  RNScreens: 4b488fdf9537bbce829e2910c8cce1d17f6d9be8
+  RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   Yoga: 7d13633d129fd179e01b8953d38d47be90db185a
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: bc52ef9749976c955c202c49588266bc5dc0cac6
+PODFILE CHECKSUM: daaf740eb6000f392dfa4256c30723c8992fc259
 
 COCOAPODS: 1.10.0
